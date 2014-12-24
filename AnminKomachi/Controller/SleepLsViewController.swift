@@ -26,15 +26,13 @@ class SleepLsViewController: UIViewController {
         var width  = self.view?.frame.width
         var height = self.view?.frame.height
         
-        println("\(width) * \(height)")
-        println(_charaImageView.frame)
-        
-        //_charaImageView.frame = CGRectMake(0, 0, height!, width!)
-        
         _bgImageView = makeImageView(CGRectMake(0, 0, height!, width!), _charaImageView.image!)
         _charaImageView.hidden = true
         _bgImageView?.sizeToFit()
         self.view.addSubview(_bgImageView!)
+        
+        var file = "oyas01_sample"
+        _soundPlayer.playVoice(file)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -52,12 +50,6 @@ class SleepLsViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         _charaImageView.sizeToFit()
-        /*
-        var width  = self.view?.frame.width
-        var height = self.view?.frame.height
-        
-        _charaImageView.frame = CGRectMake(0, 0, height!, width!)
-*/
     }
     
     override func shouldAutorotate() -> Bool {
@@ -78,6 +70,13 @@ class SleepLsViewController: UIViewController {
     }
     
     override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
+        
+        if _soundPlayer.isVoicePlaying() {
+            _soundPlayer.pauseVoice()
+        } else {
+            _soundPlayer.resumeVoice()
+        }
+        
         for touch: AnyObject in touches {
             var t: UITouch = touch as UITouch
             
