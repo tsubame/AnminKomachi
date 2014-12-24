@@ -51,8 +51,8 @@
 		B866F84D1A4ADAC100BCA990 /* player横.png in Resources */ = {isa = PBXBuildFile; fileRef = B866F83C1A4ADAC100BCA990 /* player横.png */; };
 		B866F84E1A4ADAC100BCA990 /* player横用.png in Resources */ = {isa = PBXBuildFile; fileRef = B866F83D1A4ADAC100BCA990 /* player横用.png */; };
 		B866F84F1A4ADAC100BCA990 /* player横用.png in Resources */ = {isa = PBXBuildFile; fileRef = B866F83D1A4ADAC100BCA990 /* player横用.png */; };
-		B866F8521A4AE15400BCA990 /* oyas01_sample.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B866F8511A4AE15400BCA990 /* oyas01_sample.mp3 */; };
-		B866F8531A4AE15400BCA990 /* oyas01_sample.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B866F8511A4AE15400BCA990 /* oyas01_sample.mp3 */; };
+		B893C9831A4AE4B300378B72 /* oyas01_sample.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B893C9821A4AE4B300378B72 /* oyas01_sample.mp3 */; };
+		B893C9841A4AE4B300378B72 /* oyas01_sample.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B893C9821A4AE4B300378B72 /* oyas01_sample.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,7 +95,7 @@
 		B866F83B1A4ADAC100BCA990 /* shirokuma_l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shirokuma_l.png; sourceTree = "<group>"; };
 		B866F83C1A4ADAC100BCA990 /* player横.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player横.png"; sourceTree = "<group>"; };
 		B866F83D1A4ADAC100BCA990 /* player横用.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player横用.png"; sourceTree = "<group>"; };
-		B866F8511A4AE15400BCA990 /* oyas01_sample.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = oyas01_sample.mp3; sourceTree = "<group>"; };
+		B893C9821A4AE4B300378B72 /* oyas01_sample.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = oyas01_sample.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,7 +235,7 @@
 		B866F8501A4AE11200BCA990 /* voice */ = {
 			isa = PBXGroup;
 			children = (
-				B866F8511A4AE15400BCA990 /* oyas01_sample.mp3 */,
+				B893C9821A4AE4B300378B72 /* oyas01_sample.mp3 */,
 			);
 			path = voice;
 			sourceTree = "<group>";
@@ -333,7 +333,7 @@
 				B866F8401A4ADAC100BCA990 /* ささら.png in Resources */,
 				B866F7F81A4AD44A00BCA990 /* Images.xcassets in Resources */,
 				B866F83E1A4ADAC100BCA990 /* hanasaku.png in Resources */,
-				B866F8521A4AE15400BCA990 /* oyas01_sample.mp3 in Resources */,
+				B893C9831A4AE4B300378B72 /* oyas01_sample.mp3 in Resources */,
 				B866F84A1A4ADAC100BCA990 /* shirokuma_l.png in Resources */,
 				B866F8421A4ADAC100BCA990 /* shirokuma.png in Resources */,
 				B866F8441A4ADAC100BCA990 /* orange_button.png in Resources */,
@@ -348,7 +348,7 @@
 				B866F84B1A4ADAC100BCA990 /* shirokuma_l.png in Resources */,
 				B866F8471A4ADAC100BCA990 /* yourd.png in Resources */,
 				B866F83F1A4ADAC100BCA990 /* hanasaku.png in Resources */,
-				B866F8531A4AE15400BCA990 /* oyas01_sample.mp3 in Resources */,
+				B893C9841A4AE4B300378B72 /* oyas01_sample.mp3 in Resources */,
 				B866F8491A4ADAC100BCA990 /* player.png in Resources */,
 				B866F8411A4ADAC100BCA990 /* ささら.png in Resources */,
 				B866F84F1A4ADAC100BCA990 /* player横用.png in Resources */,
