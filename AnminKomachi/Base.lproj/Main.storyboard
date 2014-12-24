@@ -26,6 +26,15 @@
                                     <segue destination="mNX-vh-5dz" kind="presentation" id="7gW-dQ-IyP"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OCc-e1-EsR">
+                                <rect key="frame" x="21" y="41" width="135" height="30"/>
+                                <state key="normal" title="添い寝ボイス縦向き">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="LoB-fT-Dbz" kind="presentation" id="hsD-9v-LfV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -45,19 +54,27 @@
                     <view key="view" contentMode="scaleToFill" id="VZ2-IE-AoQ">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" fixedFrame="YES" image="yourd.png" translatesAutoresizingMaskIntoConstraints="NO" id="23P-hz-2yi">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="_charaImageView" destination="23P-hz-2yi" id="vCz-Uc-Jal"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yg2-sV-x1t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="450.5" y="1094.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Sleep Pr View Controller-->
         <scene sceneID="uk4-yF-ydP">
             <objects>
-                <viewController id="LoB-fT-Dbz" sceneMemberID="viewController">
+                <viewController id="LoB-fT-Dbz" customClass="SleepPrViewController" customModule="AnminKomachi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="P9F-oh-TeL"/>
                         <viewControllerLayoutGuide type="bottom" id="ifa-K1-SYe"/>
@@ -71,7 +88,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LbV-UL-fIk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="721.5" y="419.5"/>
+            <point key="canvasLocation" x="911.5" y="442.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="yourd.png" width="636" height="348"/>
+    </resources>
 </document>
