@@ -17,72 +17,46 @@ class SleepLsViewController: UIViewController {
     
     var _bgImageView: UIImageView?
     
+    @IBOutlet weak var _playerImageView: UIImageView!
+    
+    @IBAction func _dismissButtonClicked(sender: AnyObject) {
+        self.presentedViewController?.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     //===========================================================
     // UI
     //===========================================================
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        var width  = self.view?.frame.width
-        var height = self.view?.frame.height
-        
-        _bgImageView = makeImageView(CGRectMake(0, 0, height!, width!), _charaImageView.image!)
-        _charaImageView.hidden = true
-        _bgImageView?.sizeToFit()
-        self.view.addSubview(_bgImageView!)
-        
-        var file = "oyas01_sample"
+        var file = "いっしょにねよう？"
         _soundPlayer.playVoice(file)
+        //if (UIViewController.classFallbacksForKeyedArchiver()) // iOS8 has this class only
+        //{
+        //UIDevice.currentDevice().setValue(UIDeviceOrientation.LandscapeRight.rawValue, forKey: "orientation")
+            //[[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIDeviceOrientationPortrait] forKey:@"orientation"];
+        //}
     }
     
-    override func viewWillAppear(animated: Bool) {
-        //_charaImageView.sizeToFit()
-        /*
-        var width  = self.view?.frame.width
-        var height = self.view?.frame.height
-        
-        println("\(width) * \(height)")
-        println(_charaImageView.frame)
-        
-        _charaImageView.frame = CGRectMake(0, 0, height!, width!)
-*/
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        _charaImageView.sizeToFit()
-    }
-    
+    // 回転の許可 AppDelegateで指定する場合はfalseにすること
     override func shouldAutorotate() -> Bool {
         return false
     }
-    
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        _charaImageView.sizeToFit()
-        
-        delay(2.0, {
-            /*
-            var width  = self.view?.frame.width
-            var height = self.view?.frame.height
-            
-            self._charaImageView.frame = CGRectMake(0, 0, height!, width!)*/
-    
-        })
-    }
-    
+
+    // これを書くとエラーになる？
+    /*
+    override func supportedInterfaceOrientations() -> Int {
+        println("回転可能な向きを通知")
+        return UIInterfaceOrientation.LandscapeRight.rawValue;
+    }*/
+
     override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
-        
-        if _soundPlayer.isVoicePlaying() {
-            _soundPlayer.pauseVoice()
-        } else {
-            _soundPlayer.resumeVoice()
-        }
         
         for touch: AnyObject in touches {
             var t: UITouch = touch as UITouch
             
             println(t.view.tag)
             
-            if t.view.tag == 20 {
+            if t.view.tag == _playerImageView.tag {
                 NSLog("player touched")
                 if _soundPlayer.isVoicePlaying() {
                     _soundPlayer.pauseVoice()
@@ -90,7 +64,7 @@ class SleepLsViewController: UIViewController {
                     _soundPlayer.resumeVoice()
                 }
             } else {
-                //_playerImageView.hidden = !_playerImageView.hidden
+                _playerImageView.hidden = !_playerImageView.hidden
             }
         }
     }

@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B80A468B1A5BCCEA0010E511 /* スクリーンショット 2014-12-16 13.18.06.png in Resources */ = {isa = PBXBuildFile; fileRef = B80A468A1A5BCCEA0010E511 /* スクリーンショット 2014-12-16 13.18.06.png */; };
+		B80A468D1A5BF2680010E511 /* 頭痛にナファリン.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B80A468C1A5BF2680010E511 /* 頭痛にナファリン.mp3 */; };
+		B80A468F1A5BF3610010E511 /* こころをリラックス。.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B80A468E1A5BF3610010E511 /* こころをリラックス。.m4a */; };
+		B80A46911A5BF3D30010E511 /* スクリーンショット 2014-12-22 16.28.18.png in Resources */ = {isa = PBXBuildFile; fileRef = B80A46901A5BF3D30010E511 /* スクリーンショット 2014-12-22 16.28.18.png */; };
+		B80A46931A5BF5950010E511 /* いっしょにねよう？.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B80A46921A5BF5950010E511 /* いっしょにねよう？.m4a */; };
+		B80A46951A5BF5A30010E511 /* maid_sleep.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B80A46941A5BF5A30010E511 /* maid_sleep.jpg */; };
+		B824F87F1A4AE942003949DE /* player下.png in Resources */ = {isa = PBXBuildFile; fileRef = B824F87E1A4AE942003949DE /* player下.png */; };
+		B82A28DF1A626816000E5DF1 /* river.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B82A28DE1A626816000E5DF1 /* river.mp3 */; };
+		B82A28E11A6289EC000E5DF1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B82A28E01A6289EC000E5DF1 /* AVFoundation.framework */; };
+		B82A28E31A6289FD000E5DF1 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B82A28E21A6289FD000E5DF1 /* MediaPlayer.framework */; };
+		B82A28E51A628A61000E5DF1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B82A28E41A628A61000E5DF1 /* UIKit.framework */; };
+		B838E2181A59449500AC809E /* mb.png in Resources */ = {isa = PBXBuildFile; fileRef = B838E2171A59449500AC809E /* mb.png */; };
+		B838E2481A5A6C8A00AC809E /* slime.gif in Resources */ = {isa = PBXBuildFile; fileRef = B838E2471A5A6C8A00AC809E /* slime.gif */; };
+		B838E24A1A5A739100AC809E /* 41515328.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B838E2491A5A739100AC809E /* 41515328.jpg */; };
+		B838E24C1A5A938C00AC809E /* player2.png in Resources */ = {isa = PBXBuildFile; fileRef = B838E24B1A5A938C00AC809E /* player2.png */; };
+		B838E24E1A5A946600AC809E /* shop_gamers-cd.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B838E24D1A5A946600AC809E /* shop_gamers-cd.jpg */; };
 		B866F7F11A4AD44A00BCA990 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B866F7F01A4AD44A00BCA990 /* AppDelegate.swift */; };
 		B866F7F31A4AD44A00BCA990 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B866F7F21A4AD44A00BCA990 /* HomeViewController.swift */; };
 		B866F7F61A4AD44A00BCA990 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B866F7F41A4AD44A00BCA990 /* Main.storyboard */; };
@@ -18,8 +34,6 @@
 		B866F8191A4AD6FD00BCA990 /* SleepVoiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B866F8161A4AD6FD00BCA990 /* SleepVoiceManager.swift */; };
 		B866F81A1A4AD6FD00BCA990 /* TalkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B866F8171A4AD6FD00BCA990 /* TalkManager.swift */; };
 		B866F81B1A4AD6FD00BCA990 /* TalkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B866F8171A4AD6FD00BCA990 /* TalkManager.swift */; };
-		B866F8201A4AD70700BCA990 /* DispatchUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B866F81C1A4AD70700BCA990 /* DispatchUtil.swift */; };
-		B866F8211A4AD70700BCA990 /* DispatchUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B866F81C1A4AD70700BCA990 /* DispatchUtil.swift */; };
 		B866F8221A4AD70700BCA990 /* FadeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B866F81D1A4AD70700BCA990 /* FadeLabel.swift */; };
 		B866F8231A4AD70700BCA990 /* FadeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B866F81D1A4AD70700BCA990 /* FadeLabel.swift */; };
 		B866F8241A4AD70700BCA990 /* JsonReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B866F81E1A4AD70700BCA990 /* JsonReader.swift */; };
@@ -51,6 +65,11 @@
 		B866F84D1A4ADAC100BCA990 /* player横.png in Resources */ = {isa = PBXBuildFile; fileRef = B866F83C1A4ADAC100BCA990 /* player横.png */; };
 		B866F84E1A4ADAC100BCA990 /* player横用.png in Resources */ = {isa = PBXBuildFile; fileRef = B866F83D1A4ADAC100BCA990 /* player横用.png */; };
 		B866F84F1A4ADAC100BCA990 /* player横用.png in Resources */ = {isa = PBXBuildFile; fileRef = B866F83D1A4ADAC100BCA990 /* player横用.png */; };
+		B887DA731A5C0616004391E1 /* スクリーンショット 2014-12-21 18.48.19.png in Resources */ = {isa = PBXBuildFile; fileRef = B887DA721A5C0616004391E1 /* スクリーンショット 2014-12-21 18.48.19.png */; };
+		B887DA751A5C0752004391E1 /* HomeLsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B887DA741A5C0752004391E1 /* HomeLsViewController.swift */; };
+		B887DA761A5C0752004391E1 /* HomeLsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B887DA741A5C0752004391E1 /* HomeLsViewController.swift */; };
+		B887DA781A5C07E1004391E1 /* LauncherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B887DA771A5C07E1004391E1 /* LauncherViewController.swift */; };
+		B887DA791A5C07E1004391E1 /* LauncherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B887DA771A5C07E1004391E1 /* LauncherViewController.swift */; };
 		B893C9831A4AE4B300378B72 /* oyas01_sample.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B893C9821A4AE4B300378B72 /* oyas01_sample.mp3 */; };
 		B893C9841A4AE4B300378B72 /* oyas01_sample.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B893C9821A4AE4B300378B72 /* oyas01_sample.mp3 */; };
 /* End PBXBuildFile section */
@@ -66,6 +85,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B80A468A1A5BCCEA0010E511 /* スクリーンショット 2014-12-16 13.18.06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "スクリーンショット 2014-12-16 13.18.06.png"; sourceTree = "<group>"; };
+		B80A468C1A5BF2680010E511 /* 頭痛にナファリン.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "頭痛にナファリン.mp3"; sourceTree = "<group>"; };
+		B80A468E1A5BF3610010E511 /* こころをリラックス。.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "こころをリラックス。.m4a"; sourceTree = "<group>"; };
+		B80A46901A5BF3D30010E511 /* スクリーンショット 2014-12-22 16.28.18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "スクリーンショット 2014-12-22 16.28.18.png"; sourceTree = "<group>"; };
+		B80A46921A5BF5950010E511 /* いっしょにねよう？.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "いっしょにねよう？.m4a"; sourceTree = "<group>"; };
+		B80A46941A5BF5A30010E511 /* maid_sleep.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = maid_sleep.jpg; sourceTree = "<group>"; };
+		B824F87E1A4AE942003949DE /* player下.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player下.png"; sourceTree = "<group>"; };
+		B82A28DE1A626816000E5DF1 /* river.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = river.mp3; sourceTree = "<group>"; };
+		B82A28E01A6289EC000E5DF1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		B82A28E21A6289FD000E5DF1 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		B82A28E41A628A61000E5DF1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B82A28E81A6512E3000E5DF1 /* AnminKomachi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AnminKomachi.entitlements; sourceTree = "<group>"; };
+		B838E2171A59449500AC809E /* mb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mb.png; sourceTree = "<group>"; };
+		B838E2471A5A6C8A00AC809E /* slime.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = slime.gif; sourceTree = "<group>"; };
+		B838E2491A5A739100AC809E /* 41515328.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 41515328.jpg; sourceTree = "<group>"; };
+		B838E24B1A5A938C00AC809E /* player2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player2.png; sourceTree = "<group>"; };
+		B838E24D1A5A946600AC809E /* shop_gamers-cd.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "shop_gamers-cd.jpg"; sourceTree = "<group>"; };
 		B866F7EB1A4AD44A00BCA990 /* AnminKomachi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnminKomachi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B866F7EF1A4AD44A00BCA990 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B866F7F01A4AD44A00BCA990 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,7 +115,6 @@
 		B866F8141A4AD6E700BCA990 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B866F8161A4AD6FD00BCA990 /* SleepVoiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SleepVoiceManager.swift; sourceTree = "<group>"; };
 		B866F8171A4AD6FD00BCA990 /* TalkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkManager.swift; sourceTree = "<group>"; };
-		B866F81C1A4AD70700BCA990 /* DispatchUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchUtil.swift; sourceTree = "<group>"; };
 		B866F81D1A4AD70700BCA990 /* FadeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeLabel.swift; sourceTree = "<group>"; };
 		B866F81E1A4AD70700BCA990 /* JsonReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonReader.swift; sourceTree = "<group>"; };
 		B866F81F1A4AD70700BCA990 /* SoundPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
@@ -95,6 +130,9 @@
 		B866F83B1A4ADAC100BCA990 /* shirokuma_l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shirokuma_l.png; sourceTree = "<group>"; };
 		B866F83C1A4ADAC100BCA990 /* player横.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player横.png"; sourceTree = "<group>"; };
 		B866F83D1A4ADAC100BCA990 /* player横用.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player横用.png"; sourceTree = "<group>"; };
+		B887DA721A5C0616004391E1 /* スクリーンショット 2014-12-21 18.48.19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "スクリーンショット 2014-12-21 18.48.19.png"; sourceTree = "<group>"; };
+		B887DA741A5C0752004391E1 /* HomeLsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeLsViewController.swift; sourceTree = "<group>"; };
+		B887DA771A5C07E1004391E1 /* LauncherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LauncherViewController.swift; sourceTree = "<group>"; };
 		B893C9821A4AE4B300378B72 /* oyas01_sample.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = oyas01_sample.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,6 +141,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B82A28E51A628A61000E5DF1 /* UIKit.framework in Frameworks */,
+				B82A28E31A6289FD000E5DF1 /* MediaPlayer.framework in Frameworks */,
+				B82A28E11A6289EC000E5DF1 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +160,9 @@
 		B866F7E21A4AD44900BCA990 = {
 			isa = PBXGroup;
 			children = (
+				B82A28E41A628A61000E5DF1 /* UIKit.framework */,
+				B82A28E21A6289FD000E5DF1 /* MediaPlayer.framework */,
+				B82A28E01A6289EC000E5DF1 /* AVFoundation.framework */,
 				B866F7ED1A4AD44A00BCA990 /* AnminKomachi */,
 				B866F8031A4AD44A00BCA990 /* AnminKomachiTests */,
 				B866F7EC1A4AD44A00BCA990 /* Products */,
@@ -137,6 +181,7 @@
 		B866F7ED1A4AD44A00BCA990 /* AnminKomachi */ = {
 			isa = PBXGroup;
 			children = (
+				B82A28E81A6512E3000E5DF1 /* AnminKomachi.entitlements */,
 				B866F8131A4AD46D00BCA990 /* Vendor */,
 				B866F8111A4AD46400BCA990 /* Model */,
 				B866F8101A4AD45C00BCA990 /* Controller */,
@@ -180,7 +225,9 @@
 		B866F8101A4AD45C00BCA990 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B887DA771A5C07E1004391E1 /* LauncherViewController.swift */,
 				B866F7F21A4AD44A00BCA990 /* HomeViewController.swift */,
+				B887DA741A5C0752004391E1 /* HomeLsViewController.swift */,
 				B866F8291A4AD7EB00BCA990 /* SleepLsViewController.swift */,
 				B866F8321A4AD9E300BCA990 /* SleepPrViewController.swift */,
 			);
@@ -200,7 +247,6 @@
 		B866F8121A4AD46900BCA990 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				B866F81C1A4AD70700BCA990 /* DispatchUtil.swift */,
 				B866F81D1A4AD70700BCA990 /* FadeLabel.swift */,
 				B866F81E1A4AD70700BCA990 /* JsonReader.swift */,
 				B866F81F1A4AD70700BCA990 /* SoundPlayer.swift */,
@@ -219,13 +265,23 @@
 		B866F8281A4AD71D00BCA990 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				B824F87E1A4AE942003949DE /* player下.png */,
+				B80A46901A5BF3D30010E511 /* スクリーンショット 2014-12-22 16.28.18.png */,
+				B80A46941A5BF5A30010E511 /* maid_sleep.jpg */,
 				B866F8351A4ADAC100BCA990 /* hanasaku.png */,
 				B866F8361A4ADAC100BCA990 /* ささら.png */,
+				B838E2471A5A6C8A00AC809E /* slime.gif */,
 				B866F8371A4ADAC100BCA990 /* shirokuma.png */,
+				B887DA721A5C0616004391E1 /* スクリーンショット 2014-12-21 18.48.19.png */,
 				B866F8381A4ADAC100BCA990 /* orange_button.png */,
+				B838E2171A59449500AC809E /* mb.png */,
+				B80A468A1A5BCCEA0010E511 /* スクリーンショット 2014-12-16 13.18.06.png */,
+				B838E2491A5A739100AC809E /* 41515328.jpg */,
 				B866F8391A4ADAC100BCA990 /* yourd.png */,
 				B866F83A1A4ADAC100BCA990 /* player.png */,
+				B838E24D1A5A946600AC809E /* shop_gamers-cd.jpg */,
 				B866F83B1A4ADAC100BCA990 /* shirokuma_l.png */,
+				B838E24B1A5A938C00AC809E /* player2.png */,
 				B866F83C1A4ADAC100BCA990 /* player横.png */,
 				B866F83D1A4ADAC100BCA990 /* player横用.png */,
 			);
@@ -236,6 +292,10 @@
 			isa = PBXGroup;
 			children = (
 				B893C9821A4AE4B300378B72 /* oyas01_sample.mp3 */,
+				B80A468C1A5BF2680010E511 /* 頭痛にナファリン.mp3 */,
+				B82A28DE1A626816000E5DF1 /* river.mp3 */,
+				B80A46921A5BF5950010E511 /* いっしょにねよう？.m4a */,
+				B80A468E1A5BF3610010E511 /* こころをリラックス。.m4a */,
 			);
 			path = voice;
 			sourceTree = "<group>";
@@ -289,9 +349,13 @@
 				TargetAttributes = {
 					B866F7EA1A4AD44900BCA990 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = AXM98ZS3RD;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
+							};
+							com.apple.InterAppAudio = {
+								enabled = 0;
 							};
 						};
 					};
@@ -325,19 +389,33 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B838E2181A59449500AC809E /* mb.png in Resources */,
+				B824F87F1A4AE942003949DE /* player下.png in Resources */,
 				B866F84C1A4ADAC100BCA990 /* player横.png in Resources */,
 				B866F7F61A4AD44A00BCA990 /* Main.storyboard in Resources */,
 				B866F84E1A4ADAC100BCA990 /* player横用.png in Resources */,
 				B866F7FB1A4AD44A00BCA990 /* LaunchScreen.xib in Resources */,
+				B80A46911A5BF3D30010E511 /* スクリーンショット 2014-12-22 16.28.18.png in Resources */,
+				B80A46931A5BF5950010E511 /* いっしょにねよう？.m4a in Resources */,
+				B80A46951A5BF5A30010E511 /* maid_sleep.jpg in Resources */,
+				B80A468D1A5BF2680010E511 /* 頭痛にナファリン.mp3 in Resources */,
 				B866F8481A4ADAC100BCA990 /* player.png in Resources */,
+				B838E2481A5A6C8A00AC809E /* slime.gif in Resources */,
 				B866F8401A4ADAC100BCA990 /* ささら.png in Resources */,
+				B82A28DF1A626816000E5DF1 /* river.mp3 in Resources */,
+				B838E24E1A5A946600AC809E /* shop_gamers-cd.jpg in Resources */,
+				B838E24C1A5A938C00AC809E /* player2.png in Resources */,
 				B866F7F81A4AD44A00BCA990 /* Images.xcassets in Resources */,
+				B838E24A1A5A739100AC809E /* 41515328.jpg in Resources */,
 				B866F83E1A4ADAC100BCA990 /* hanasaku.png in Resources */,
+				B887DA731A5C0616004391E1 /* スクリーンショット 2014-12-21 18.48.19.png in Resources */,
 				B893C9831A4AE4B300378B72 /* oyas01_sample.mp3 in Resources */,
 				B866F84A1A4ADAC100BCA990 /* shirokuma_l.png in Resources */,
+				B80A468B1A5BCCEA0010E511 /* スクリーンショット 2014-12-16 13.18.06.png in Resources */,
 				B866F8421A4ADAC100BCA990 /* shirokuma.png in Resources */,
 				B866F8441A4ADAC100BCA990 /* orange_button.png in Resources */,
 				B866F8461A4ADAC100BCA990 /* yourd.png in Resources */,
+				B80A468F1A5BF3610010E511 /* こころをリラックス。.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,18 +443,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B887DA751A5C0752004391E1 /* HomeLsViewController.swift in Sources */,
 				B866F8331A4AD9E300BCA990 /* SleepPrViewController.swift in Sources */,
 				B866F8241A4AD70700BCA990 /* JsonReader.swift in Sources */,
 				B866F8181A4AD6FD00BCA990 /* SleepVoiceManager.swift in Sources */,
 				B866F8221A4AD70700BCA990 /* FadeLabel.swift in Sources */,
 				B866F82E1A4AD83F00BCA990 /* SwiftyJSON.swift in Sources */,
 				B866F82A1A4AD7EB00BCA990 /* SleepLsViewController.swift in Sources */,
-				B866F8201A4AD70700BCA990 /* DispatchUtil.swift in Sources */,
 				B866F8261A4AD70700BCA990 /* SoundPlayer.swift in Sources */,
 				B866F7F31A4AD44A00BCA990 /* HomeViewController.swift in Sources */,
 				B866F7F11A4AD44A00BCA990 /* AppDelegate.swift in Sources */,
 				B866F8151A4AD6E700BCA990 /* Constants.swift in Sources */,
 				B866F81A1A4AD6FD00BCA990 /* TalkManager.swift in Sources */,
+				B887DA781A5C07E1004391E1 /* LauncherViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,13 +466,14 @@
 				B866F81B1A4AD6FD00BCA990 /* TalkManager.swift in Sources */,
 				B866F8271A4AD70700BCA990 /* SoundPlayer.swift in Sources */,
 				B866F8191A4AD6FD00BCA990 /* SleepVoiceManager.swift in Sources */,
+				B887DA761A5C0752004391E1 /* HomeLsViewController.swift in Sources */,
+				B887DA791A5C07E1004391E1 /* LauncherViewController.swift in Sources */,
 				B866F8231A4AD70700BCA990 /* FadeLabel.swift in Sources */,
 				B866F8071A4AD44A00BCA990 /* AnminKomachiTests.swift in Sources */,
 				B866F8301A4AD8F000BCA990 /* Constants.swift in Sources */,
 				B866F82B1A4AD7EB00BCA990 /* SleepLsViewController.swift in Sources */,
 				B866F82F1A4AD83F00BCA990 /* SwiftyJSON.swift in Sources */,
 				B866F8251A4AD70700BCA990 /* JsonReader.swift in Sources */,
-				B866F8211A4AD70700BCA990 /* DispatchUtil.swift in Sources */,
 				B866F8341A4AD9E300BCA990 /* SleepPrViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

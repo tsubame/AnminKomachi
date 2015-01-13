@@ -18,10 +18,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         //NSNotificationCenter.defaultCenter().removeObserver(self)
+
+        //UIApplication.sharedApplication().beginReceivingRemoteControlEvents()
+        AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, error: nil)
+        AVAudioSession.sharedInstance().setActive(true, error: nil)
         
-        var audioSession = AVAudioSession.sharedInstance()
-        audioSession.setCategory(AVAudioSessionCategoryPlayback, withOptions: AVAudioSessionCategoryOptions.MixWithOthers, error: nil)
-        
+        //var audioSession = AVAudioSession.sharedInstance()
+        //audioSession.setCategory(AVAudioSessionCategoryPlayback, withOptions: AVAudioSessionCategoryOptions.MixWithOthers, error: nil)
+        //audioSession.setCategory(AVAudioSessionCategoryPlayback, withOptions: AVAudioSessionCategoryOptions.DuckOthers, error: nil)
+        //audioSession.setActive(true, error: nil)
         
         return true
     }
@@ -48,15 +53,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    
+    // 画面の回転
     func application(application: UIApplication, supportedInterfaceOrientationsForWindow window: UIWindow?) -> Int {
         
+        println(self.window?.rootViewController?.presentedViewController)
+        
+    
+        var or = NSUserDefaults.standardUserDefaults().stringForKey("orientation")
+
+        if or != nil {
+            println(or)
+            if or! == "portrait" {
+                println("縦向きにします")
+                return Int(UIInterfaceOrientationMask.Portrait.rawValue);
+            } else if or! == "landscape" {
+                println("横向きにします")
+                return Int(UIInterfaceOrientationMask.LandscapeRight.rawValue);
+            }
+        }
+                
         if self.window?.rootViewController?.presentedViewController? is SleepLsViewController {
+            //println("横向きにします")
             return Int(UIInterfaceOrientationMask.LandscapeRight.rawValue);
         } else {
+            //println("縦向きにします")
             return Int(UIInterfaceOrientationMask.Portrait.rawValue);
         }
     }
+    
+    /*
+    override func canBecomeFirstResponder() -> Bool {
+        return true
+    }
+    
+    override func remoteControlReceivedWithEvent(event: UIEvent) {
+        let rc = event.subtype
+        //let p = self.player.player
+        println("received remote control \(rc.rawValue)")
+    }*/
 }
 
 
