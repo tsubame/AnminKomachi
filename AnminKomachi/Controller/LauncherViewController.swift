@@ -15,6 +15,8 @@ class LauncherViewController: UIViewController {
 
     var _player = SoundPlayer()
     
+    @IBOutlet weak var _bgBlackOut: UIView!
+    
     var _mediaPlayer: MPMoviePlayerController? = nil
     
     // セグエ
@@ -27,6 +29,16 @@ class LauncherViewController: UIViewController {
         var pref = NSUserDefaults.standardUserDefaults()
         
         if id == "ls" {
+            UIView.transitionWithView(_bgBlackOut,
+                duration: 0.5,
+                options: UIViewAnimationOptions.TransitionCrossDissolve,
+                animations: {
+                    self._bgBlackOut.hidden = false
+                },
+                completion: {
+                    finished in
+            })
+            
             pref.setObject("landscape", forKey: "orientation")
             pref.synchronize()
         } else {
@@ -41,6 +53,16 @@ class LauncherViewController: UIViewController {
         //UIDevice.currentDevice().setValue(UIInterfaceOrientation.Portrait.rawValue, forKey: "orientation")
         NSUserDefaults.standardUserDefaults().setObject("portrait", forKey: "orientation")
         NSUserDefaults.standardUserDefaults().synchronize()
+        
+        UIView.transitionWithView(_bgBlackOut,
+            duration: 0.5,
+            options: UIViewAnimationOptions.TransitionCrossDissolve,
+            animations: {
+                self._bgBlackOut.hidden = true
+            },
+            completion: {
+                finished in
+        })
     }
     
     
@@ -81,6 +103,9 @@ class LauncherViewController: UIViewController {
         
         let oth = AVAudioSession.sharedInstance().otherAudioPlaying
         println("other audio playing: \(oth)")
+        
+        var or = NSUserDefaults.standardUserDefaults().stringForKey("orientation")
+        println("画面の向き: " + or!)
     }
     
     // 回転の許可

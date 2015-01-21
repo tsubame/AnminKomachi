@@ -9,25 +9,31 @@
 import UIKit
 import AVFoundation
 
-@UIApplicationMain
+//@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
+    var _player = SoundPlayer()
     
+    func application(application: UIApplication, willFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
+        println(NSStringFromClass(AppDelegate))
+        println("起動中 willFinishLaunchingWithOptions")
+        // 起動音を鳴らす
+        //_player.playSE("koron")
+        
+        var pref = NSUserDefaults.standardUserDefaults()
+        pref.setObject("portrait", forKey: "orientation")
+        pref.synchronize()
+        
+        return true
+    }
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
-        //NSNotificationCenter.defaultCenter().removeObserver(self)
 
-        //UIApplication.sharedApplication().beginReceivingRemoteControlEvents()
         AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, error: nil)
         AVAudioSession.sharedInstance().setActive(true, error: nil)
         
-        //var audioSession = AVAudioSession.sharedInstance()
-        //audioSession.setCategory(AVAudioSessionCategoryPlayback, withOptions: AVAudioSessionCategoryOptions.MixWithOthers, error: nil)
-        //audioSession.setCategory(AVAudioSessionCategoryPlayback, withOptions: AVAudioSessionCategoryOptions.DuckOthers, error: nil)
-        //audioSession.setActive(true, error: nil)
-        
+        println("起動中 didFinishLaunchingWithOptions")
         return true
     }
     
@@ -56,13 +62,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // 画面の回転
     func application(application: UIApplication, supportedInterfaceOrientationsForWindow window: UIWindow?) -> Int {
         
-        println(self.window?.rootViewController?.presentedViewController)
+        //println(self.window?.rootViewController?.presentedViewController)
         
     
         var or = NSUserDefaults.standardUserDefaults().stringForKey("orientation")
 
         if or != nil {
-            println(or)
+            //println(or)
             if or! == "portrait" {
                 println("縦向きにします")
                 return Int(UIInterfaceOrientationMask.Portrait.rawValue);

@@ -56,7 +56,7 @@ func rand(num: Int) -> Int {
 
 // ImageViewを作成
 func makeImageView(frame: CGRect, image: UIImage) -> UIImageView {
-    let imageView = UIImageView()
+    var imageView = UIImageView()
     imageView.frame = frame
     imageView.image = image
     

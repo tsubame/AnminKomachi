@@ -56,6 +56,20 @@ class HomeViewController: UIViewController {
         let id = segue.identifier!
         var pref = NSUserDefaults.standardUserDefaults()
         
+        if id == "ls" {
+            var vc: SleepPrViewController = segue.destinationViewController as SleepPrViewController
+            vc._imageType = "ls"
+            vc._imageNumFormat = "%03d"
+        } else if id == "pr" {
+            var vc: SleepPrViewController = segue.destinationViewController as SleepPrViewController
+            vc._imageType = "pr"
+            vc._imageNumFormat = "%02d"
+        } else {
+            var vc: SleepPrViewController = segue.destinationViewController as SleepPrViewController
+            vc._imageType = "sq"
+            vc._imageNumFormat = "%02d"
+        }
+        
         if id == "sleepLsSeque" {
             //println("選択キャラがありません。初期データとして \(selectedChara) を登録します")
             pref.setObject("landscape", forKey: "orientation")
@@ -81,7 +95,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        gravityTest()
+        //gravityTest()
     }
     
     // 回転の許可
