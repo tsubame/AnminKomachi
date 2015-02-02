@@ -100,10 +100,12 @@
                                     <segue destination="zdd-fX-S2M" kind="presentation" identifier="ls" modalTransitionStyle="crossDissolve" id="Ts0-VA-Ik2"/>
                                 </connections>
                             </button>
-                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H14-Ji-5hc">
-                                <rect key="frame" x="-194" y="-33" width="710" height="700"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="テストラベル" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ues-wl-nqb">
+                                <rect key="frame" x="106" y="323" width="208" height="66"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -113,17 +115,17 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="_bgBlackOut" destination="H14-Ji-5hc" id="ycH-Yq-2FM"/>
+                        <outlet property="_outlineLabel" destination="ues-wl-nqb" id="3yj-Y5-qt0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BoF-Ny-c0e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-243.5" y="657.5"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Home Pr View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="HomeViewController" customModule="AnminKomachi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="HomePrViewController" customModule="AnminKomachi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -132,8 +134,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" misplaced="YES" image="ema.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Fyb-hl-fIJ">
+                                <rect key="frame" x="-73" y="-17" width="521" height="700"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OCc-e1-EsR">
-                                <rect key="frame" x="6" y="333" width="201" height="70"/>
+                                <rect key="frame" x="16" y="510" width="158" height="69"/>
                                 <state key="normal" title="安眠音声" backgroundImage="ボタン桜.png">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -151,19 +156,6 @@
                                     <segue destination="LoB-fT-Dbz" kind="presentation" identifier="sq" id="lTO-JH-HB8"/>
                                 </connections>
                             </button>
-                            <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="slime.gif" translatesAutoresizingMaskIntoConstraints="NO" id="k8M-bM-CRG">
-                                <rect key="frame" x="216" y="549" width="115" height="145"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D21-yE-eH1">
-                                <rect key="frame" x="215" y="514" width="116" height="45"/>
-                                <state key="normal" title="戻る" backgroundImage="ボタン桜.png">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="HfM-Vu-hTa" kind="unwind" unwindAction="returnToHome:" id="Kmx-Q2-k6y"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="brc-Ne-Ke8">
                                 <rect key="frame" x="289" y="451" width="30" height="30"/>
                                 <state key="normal" title="ls">
@@ -173,36 +165,41 @@
                                     <segue destination="LoB-fT-Dbz" kind="presentation" identifier="ls" id="ceE-6q-XCE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWx-Rm-R5b">
-                                <rect key="frame" x="6" y="411" width="201" height="70"/>
-                                <state key="normal" title="めざましをセット" backgroundImage="ボタン桜.png">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D21-yE-eH1">
+                                <rect key="frame" x="16" y="436" width="116" height="45"/>
+                                <state key="normal" title="戻る" backgroundImage="ボタン桜.png">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="HfM-Vu-hTa" kind="unwind" unwindAction="returnToHome:" id="Kmx-Q2-k6y"/>
+                                </connections>
                             </button>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" ambiguous="YES" misplaced="YES" image="cover_ls_066.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="9P9-Ol-nFl">
-                                <rect key="frame" x="23" y="67" width="308" height="240"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" misplaced="YES" image="window.png" translatesAutoresizingMaskIntoConstraints="NO" id="wgC-3l-75X">
+                                <rect key="frame" x="16" y="385" width="359" height="236"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dummy." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wb5-71-Te4">
+                                <rect key="frame" x="44" y="436" width="275" height="123"/>
+                                <fontDescription key="fontDescription" name="HiraKakuProN-W6" family="Hiragino Kaku Gothic ProN" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="9P9-Ol-nFl" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" priority="10" id="99D-pl-UDe"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="9P9-Ol-nFl" secondAttribute="trailing" multiplier="0.5" id="FcP-D3-qHQ"/>
-                            <constraint firstAttribute="width" secondItem="9P9-Ol-nFl" secondAttribute="width" id="Pbk-UK-kew"/>
-                            <constraint firstAttribute="centerX" secondItem="9P9-Ol-nFl" secondAttribute="centerX" id="ddK-61-fR0"/>
-                            <constraint firstItem="9P9-Ol-nFl" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="peU-sL-3OU"/>
+                            <constraint firstItem="wgC-3l-75X" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" multiplier="0.9" id="69h-21-n8N"/>
+                            <constraint firstItem="Fyb-hl-fIJ" firstAttribute="height" secondItem="kh9-bI-dsS" secondAttribute="height" multiplier="0.8" id="E3I-QE-1fb"/>
+                            <constraint firstAttribute="centerY" secondItem="Fyb-hl-fIJ" secondAttribute="centerY" id="EBl-Nn-hFY"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="wgC-3l-75X" secondAttribute="bottom" constant="2" id="ZKG-2z-nsK"/>
+                            <constraint firstAttribute="centerX" secondItem="Fyb-hl-fIJ" secondAttribute="centerX" id="l3K-3p-DFL"/>
+                            <constraint firstItem="wgC-3l-75X" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="10" id="mRi-Vo-Tg3"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="99D-pl-UDe"/>
-                                <exclude reference="FcP-D3-qHQ"/>
-                                <exclude reference="peU-sL-3OU"/>
-                            </mask>
-                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="_slimeImageView" destination="k8M-bM-CRG" id="ITK-sH-Trr"/>
+                        <outlet property="_charImageView" destination="Fyb-hl-fIJ" id="w8W-jF-lye"/>
+                        <outlet property="_dummyLabel" destination="Wb5-71-Te4" id="KHN-MD-15n"/>
+                        <outlet property="_msgWindowImageView" destination="wgC-3l-75X" id="9Fg-Jf-SEW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -304,13 +301,13 @@
     </scenes>
     <resources>
         <image name="cover_ls_001.jpg" width="640" height="480"/>
-        <image name="cover_ls_066.jpg" width="597" height="379"/>
         <image name="cover_pr_59.jpg" width="453" height="640"/>
+        <image name="ema.jpg" width="521" height="700"/>
         <image name="player.png" width="328" height="164"/>
-        <image name="slime.gif" width="250" height="221"/>
+        <image name="window.png" width="359" height="236"/>
         <image name="ボタン桜.png" width="170" height="70"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hsD-9v-LfV"/>
+        <segue reference="lTO-JH-HB8"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -35,6 +35,7 @@ let NOSOUND_FILE = "無音"// "autumn"//"nosound.mp3"
 
 import Foundation
 import UIKit
+//import Realm
 
 // Double型を指定できる dispatch_after   （使い方）delay(2.0, { println("test.") })
 func delay(delay:Double, closure:()->()) {

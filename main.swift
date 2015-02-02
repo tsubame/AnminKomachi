@@ -13,12 +13,12 @@ import AudioToolbox
 
 println("起動します")
 
-let fileName = "piroriro"
+let fileName = "コイン"
 
 //AudioServicesPlaySystemSound(SystemSoundID(1008))
 
 // ファイルがなければnilを返す
-var path = NSBundle.mainBundle().pathForResource(fileName, ofType: "wav")
+var path = NSBundle.mainBundle().pathForResource(fileName, ofType: "m4a")
 
 println(path)
 

@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+//import Realm
 
 //@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,7 +24,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         var pref = NSUserDefaults.standardUserDefaults()
         pref.setObject("portrait", forKey: "orientation")
+        // 画面の縦幅を記録
+        var height = Int(UIScreen.mainScreen().bounds.size.height)
+        pref.setInteger(height, forKey: "screenHeight")
+
         pref.synchronize()
+        
+        //println(RLMRealm.defaultRealmPath())
         
         return true
     }
