@@ -14,7 +14,7 @@ import UIKit
 
 class SleepLsViewController: UIViewController {
     
-    var _soundPlayer = SoundPlayer()
+    var _soundPlayer = SoundFilePlayer()
     
     // プレイヤー表示用画像
     var _coverImage = UIImage(named: "maid_sleep.jpg")

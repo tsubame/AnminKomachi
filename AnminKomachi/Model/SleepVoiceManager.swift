@@ -29,7 +29,7 @@ class SleepVoiceManager: NSObject {
     var _imageView: UIImageView?
     
     // 音声再生用
-    var _soundPlayer = SoundPlayer()
+    var _soundPlayer = SoundFilePlayer()
     // jsonファイル読み込み用
     var _jsonReader = JsonReader()
     

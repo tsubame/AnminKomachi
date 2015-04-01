@@ -10,32 +10,25 @@ import UIKit
 
 class HomePrViewController: UIViewController {
     
-    //var _animator:UIDynamicAnimator = UIDynamicAnimator()
-    
     var _nextView: UIView = UIView()
-    
-    var _msgWindowLabel: UILabel!
     
     @IBOutlet weak var _dummyLabel: UILabel!
     
     @IBOutlet weak var _charImageView: UIImageView!
     
-
-    
-    var _msgIndex = 0
-    
-    var _aText = NSMutableAttributedString(string: "ラベル")
-    
     @IBOutlet weak var _msgWindowImageView: UIImageView!
+
+    @IBOutlet weak var _clockLabel: UILabel!
     
     var _fadeLabel = FadeLabel()
+ 
+    var _msgWindowLabel: UILabel!
     
-    var _imageType = "pr"
 
+    var _aText = NSMutableAttributedString(string: "ラベル")
 
-    
     //
-    let _imageNameFormat = "cover_pr_"
+    let _imageNameFormat = "cover_pr"
     //
     let _imageNumFormat = "%02d"
     
@@ -43,6 +36,10 @@ class HomePrViewController: UIViewController {
     var _imageFileNames = [String]()
     //
     var _imageIndex = 0
+    
+    var _msgIndex = 0
+    
+    var _updateClockTimer: NSTimer?
     
     // サンプルで表示するテキスト
     let _sampleTexts = [
@@ -71,23 +68,22 @@ class HomePrViewController: UIViewController {
         }
     }
     
+    // 
+    func showRandomImage() {
+        _imageIndex = rand(_imageFileNames.count)
+        changeImage()
+    }
+    
     // 画像の変更
     func changeImage() {
-        _imageIndex++
-        //
-        var indexStr = NSString(format: _imageNumFormat, _imageIndex)
-        //
-        var fileName = "cover_\(_imageType)_" + indexStr + ".jpg"
-        println(fileName)
-        
-        let bgImage = UIImage(named: fileName)
-        
-        if bgImage == nil {
-            println("画像がありません。")
+        if _imageFileNames.count <= _imageIndex {
             _imageIndex = 0
-            changeImage()
         } else {
-            changeImageWithFade(bgImage!)
+            let fileName = _imageFileNames[_imageIndex]
+            let image = UIImage(named: fileName)
+            changeImageWithFade(image!)
+            
+            _imageIndex++
         }
     }
     
@@ -157,6 +153,22 @@ class HomePrViewController: UIViewController {
         })
     }
 
+    func showNowTime() {
+        // 現在の秒を取得
+        let flags = NSCalendarUnit.HourCalendarUnit |
+            NSCalendarUnit.MinuteCalendarUnit |
+            NSCalendarUnit.SecondCalendarUnit
+        
+        let cal    = NSCalendar(calendarIdentifier: NSGregorianCalendar)!
+        let comps  = cal.components(flags, fromDate: NSDate())
+        //let second = comps.second
+        let hour   = comps.hour
+        let minute = comps.minute
+        
+        let timeStr = "\(hour):\(minute)"
+        
+        _clockLabel.text = timeStr
+    }
     
     //===========================================================
     // 画面遷移
@@ -203,32 +215,7 @@ class HomePrViewController: UIViewController {
         NSUserDefaults.standardUserDefaults().synchronize()
     }
     
-    // 1つのラベルを作成
-    func makeFadeLabel(frame: CGRect, text: NSString, font: UIFont) -> FadeLabel {
-        var label = FadeLabel()
-        label.frame = CGRectMake(frame.origin.x, frame.origin.y, frame.width, frame.height)
-        label.text = text
-        label.font = font
-        label.textAlignment = NSTextAlignment.Left
-        label.lineBreakMode = NSLineBreakMode.ByWordWrapping
-        label.numberOfLines = 4
-        //label.sizeToFit()
-        
-        return label
-    }
-    
-    //===========================================================
-    // UI
-    //===========================================================
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        appendImgFileNamesToArray()
-        println(_imageFileNames)
-        
-        _msgWindowImageView.hidden = true
-        
+    func showFadeLabel() {
         _fadeLabel = makeFadeLabel(CGRectMake(20, 70, 240, 100), text: "", font: UIFont(name: "HiraKakuProN-W6", size: 16)!)
         _fadeLabel.setWaitSecToShowNextChar(0.04)
         _msgWindowImageView.addSubview(_fadeLabel)
@@ -246,31 +233,25 @@ class HomePrViewController: UIViewController {
         label.numberOfLines = 5
         _msgWindowLabel = label
         _msgWindowLabel.hidden = true
+    }
+    
+    // 1つのラベルを作成
+    func makeFadeLabel(frame: CGRect, text: NSString, font: UIFont) -> FadeLabel {
+        var label = FadeLabel()
+        label.frame = CGRectMake(frame.origin.x, frame.origin.y, frame.width, frame.height)
+        label.text = text
+        label.font = font
+        label.textAlignment = NSTextAlignment.Left
+        label.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        label.numberOfLines = 4
+        //label.sizeToFit()
         
+        return label
     }
     
-    override func viewWillAppear(animated: Bool) {
-        _dummyLabel.hidden = true
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        _fadeLabel.showTextWithFade("こんばんは。今日も一日、お疲れ様でした。")
-        _msgWindowImageView.addSubview(_msgWindowLabel)
-        showMsgWindow()
-    }
-    
-    // 回転の許可
-    
-    override func shouldAutorotate() -> Bool {
-        return false
-    }
-    
-    /*
-    override func supportedInterfaceOrientations() -> Int {
-    println("回転可能な向きを通知")
-    return UIInterfaceOrientation.Portrait.rawValue;
-    }*/
-    
+    //===========================================================
+    // タッチ
+    //===========================================================
     // タッチ
     override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
         
@@ -280,6 +261,13 @@ class HomePrViewController: UIViewController {
             //println(t.view.tag)
             var loc = t.locationInView(self.view)
             println(loc)
+            
+            if loc.y < 80 && 250 < loc.x  {
+                dismissViewControllerAnimated(true, completion: nil)
+                print("画面遷移したい…")
+                
+                return
+            }
             
             if loc.y < 140 {
                 changeImage()
@@ -295,36 +283,54 @@ class HomePrViewController: UIViewController {
         }
     }
     
+    //===========================================================
+    // UI
+    //===========================================================
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        appendImgFileNamesToArray()
+        println(_imageFileNames)
+        
+        showRandomImage()
+        
+        _msgWindowImageView.hidden = true
+        showFadeLabel()
+        
+        // タイマー
+        showNowTime()
+        _updateClockTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "showNowTime", userInfo: nil, repeats: true)
+
+    }
     
-    //@IBOutlet weak var _slimeImageView: UIImageView!
+    override func viewWillAppear(animated: Bool) {
+        _dummyLabel.hidden = true
+    }
     
-    //@IBOutlet weak var _playerImageView: UIImageView!
-    //var _animationView =
+    override func viewDidAppear(animated: Bool) {
+        _fadeLabel.showTextWithFade("こんばんは。今日も一日、お疲れ様でした。")
+        _msgWindowImageView.addSubview(_msgWindowLabel)
+        showMsgWindow()
+    }
+    
+    // 回転の許可
+    override func shouldAutorotate() -> Bool {
+        return false
+    }
+    
+    // ステータスバーを非表示
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    
     /*
-    func gravityTest() {
-    //_playerImageView.hidden = false
-    _playerImageView.frame = CGRectMake(_playerImageView.frame.origin.x, 0, _playerImageView.bounds.width, _playerImageView.bounds.height)
-    
-    _slimeImageView.hidden = false
-    _slimeImageView.frame = CGRectMake(_slimeImageView.frame.origin.x, 0, _slimeImageView.bounds.width, _slimeImageView.bounds.height)
-    
-    _animator = UIDynamicAnimator(referenceView: self.view)
-    var gravity = UIGravityBehavior(items: [_playerImageView, _slimeImageView])
-    gravity.magnitude = 3.0
-    _animator.addBehavior(gravity)
-    var collisionLine: CGFloat = 400
-    var collisionBehavior = UICollisionBehavior(items: [_playerImageView])
-    
-    collisionBehavior.addBoundaryWithIdentifier("bottom", fromPoint: CGPointMake(0, collisionLine), toPoint: CGPointMake(300, collisionLine))
-    //collisionBehavior.translatesReferenceBoundsIntoBoundary = true
-    
-    _animator.addBehavior(collisionBehavior)
-    
-    var collisionBehavior2 = UICollisionBehavior(items: [_slimeImageView])
-    collisionBehavior2.translatesReferenceBoundsIntoBoundary = true
-    _animator.addBehavior(collisionBehavior2)
+    override func supportedInterfaceOrientations() -> Int {
+    println("回転可能な向きを通知")
+    return UIInterfaceOrientation.Portrait.rawValue;
     }*/
     
+
+
 }
 

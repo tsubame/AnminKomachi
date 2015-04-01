@@ -38,7 +38,8 @@ import UIKit
 //import Realm
 
 // Double型を指定できる dispatch_after   （使い方）delay(2.0, { println("test.") })
-func delay(delay:Double, closure:()->()) {
+//func delay(delay:Double, closure:()->()) {
+func dispachAfterByDouble(delay:Double, closure:()->()) {
     dispatch_after(
         dispatch_time(
             DISPATCH_TIME_NOW,

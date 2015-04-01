@@ -25,9 +25,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var pref = NSUserDefaults.standardUserDefaults()
         pref.setObject("portrait", forKey: "orientation")
         // 画面の縦幅を記録
-        var height = Int(UIScreen.mainScreen().bounds.size.height)
+        let height = Int(UIScreen.mainScreen().bounds.size.height)
         pref.setInteger(height, forKey: "screenHeight")
-
+        let width = Int(UIScreen.mainScreen().bounds.size.width)
+        pref.setInteger(width, forKey: "screenWidth")
+        
         pref.synchronize()
         
         //println(RLMRealm.defaultRealmPath())

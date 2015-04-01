@@ -29,6 +29,7 @@ class LauncherViewController: UIViewController {
     
     @IBOutlet weak var _outlineLabel: UILabel!
     
+    @IBOutlet weak var _clockLabel: UILabel!
     
     // セグエ
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -38,8 +39,8 @@ class LauncherViewController: UIViewController {
         
         let id = segue.identifier!
         var pref = NSUserDefaults.standardUserDefaults()
-        
-        if id == "ls" {
+        // 画面遷移前にorientationを決定
+        if id == "ls" || id == "sample" || id == "pickerSample" {
             /*
             UIView.transitionWithView(_bgBlackOut,
                 duration: 0.5,
@@ -65,17 +66,6 @@ class LauncherViewController: UIViewController {
         //UIDevice.currentDevice().setValue(UIInterfaceOrientation.Portrait.rawValue, forKey: "orientation")
         NSUserDefaults.standardUserDefaults().setObject("portrait", forKey: "orientation")
         NSUserDefaults.standardUserDefaults().synchronize()
-        
-        /*
-        UIView.transitionWithView(_bgBlackOut,
-            duration: 0.5,
-            options: UIViewAnimationOptions.TransitionCrossDissolve,
-            animations: {
-                self._bgBlackOut.hidden = true
-            },
-            completion: {
-                finished in
-        })*/
     }
     
     
@@ -105,6 +95,23 @@ class LauncherViewController: UIViewController {
             MPMediaItemPropertyArtwork: albumArt
         ]
         //println(MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo)
+    }
+    
+    func showNowTime() {
+        // 現在の秒を取得
+        let flags = NSCalendarUnit.HourCalendarUnit |
+            NSCalendarUnit.MinuteCalendarUnit |
+            NSCalendarUnit.SecondCalendarUnit
+        
+        let cal    = NSCalendar(calendarIdentifier: NSGregorianCalendar)!
+        let comps  = cal.components(flags, fromDate: NSDate())
+        //let second = comps.second
+        let hour   = comps.hour
+        let minute = comps.minute
+        
+        let timeStr = "\(hour):\(minute)"
+        
+        _clockLabel.text = timeStr
     }
     
     //===========================================================
@@ -164,56 +171,15 @@ class LauncherViewController: UIViewController {
         println(UIScreen.mainScreen().bounds)
     }
     
+    override func viewWillAppear(animated: Bool) {
+        showNowTime()
+    }
+    
     // 回転の許可
     override func shouldAutorotate() -> Bool {
         return false
     }
     
-    /*
-    // FirstResponderDelegate
-    override func canBecomeFirstResponder() -> Bool {
-        return true
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-
-        if self.canBecomeFirstResponder() {
-            self.becomeFirstResponder()
-            UIApplication.sharedApplication().beginReceivingRemoteControlEvents()
-            println("1stレスポンダーになりました。")
-            //playEnvSE()
-        }
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-
-        super.viewWillDisappear(animated)
-        UIApplication.sharedApplication().endReceivingRemoteControlEvents()
-        self.resignFirstResponder()
-    }
-    
-    override func remoteControlReceivedWithEvent(event: UIEvent) {
-        let rc = event.subtype
-        //let p = self.player.player
-        println("received remote control \(rc.rawValue)") // 101 = pause, 100 = play
-        
-        switch rc {
-            case .RemoteControlTogglePlayPause:
-                println("toggle play pause.")
-                break
-            case .RemoteControlPlay:
-                playEnvSE()
-                break
-            case .RemoteControlPause:
-                println("pause.")
-                pauseEnvSE()
-                break
-            default:
-                break
-        }
-        
-    }*/
     
     override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
         if self.isFirstResponder() {

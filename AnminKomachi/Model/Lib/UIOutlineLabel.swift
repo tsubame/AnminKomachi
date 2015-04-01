@@ -11,8 +11,12 @@ import UIKit
 
 class UIOutlineLabel: UILabel {
     
-    var outlineColor = UIColor.blackColor()
-    var outlineSize: CGFloat  = 2.0;
+    var innerOutlineColor = UIColor.whiteColor()
+    var innerOutlineSize: CGFloat  = 2.0;
+    
+    var outerOutlineColor = UIColor.blackColor()
+    var outerOutlineSize: CGFloat  = 4.0;
+    
     
     // 初期化
     override init() {
@@ -33,21 +37,24 @@ class UIOutlineLabel: UILabel {
         var cr = UIGraphicsGetCurrentContext()
         let textColor = self.textColor
         
-    //CGContextRef cr = UIGraphicsGetCurrentContext();
-    //UIColor *textColor = self.textColor;
-    
-        CGContextSetLineWidth(cr, outlineSize)
+        /*
+        // 外枠を描画
+        CGContextSetLineWidth(cr, outerOutlineSize)
         CGContextSetLineJoin(cr, kCGLineJoinRound)
         CGContextSetTextDrawingMode(cr, kCGTextStroke)
-        
-        self.textColor = outlineColor
+        self.textColor = outerOutlineColor
         super.drawTextInRect(rect)
-    //[super drawTextInRect:rect];
-    
+        */
+        // 内枠を描画
+        CGContextSetLineWidth(cr, innerOutlineSize)
+        CGContextSetLineJoin(cr, kCGLineJoinRound)
+        CGContextSetTextDrawingMode(cr, kCGTextStroke)
+        self.textColor = innerOutlineColor
+        super.drawTextInRect(rect)
+        // テキストを描画
         CGContextSetTextDrawingMode(cr, kCGTextFill)
         self.textColor = textColor
         super.drawTextInRect(rect)
-    //[super drawTextInRect:rect];
     }
 
 }

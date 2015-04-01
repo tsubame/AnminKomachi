@@ -14,7 +14,7 @@ enum SoundPlayerErrorCode:Int {
     case FileNotFound
 }
 
-public class SoundPlayer: NSObject, AVAudioPlayerDelegate {
+public class SoundFilePlayer: NSObject, AVAudioPlayerDelegate {
 
     // 音声再生用
     //var _voicePlayer: AVAudioPlayer?

@@ -27,7 +27,7 @@ class FadeLabel: UILabel {
     // 縁取り
     var outlineColor = UIColor.blackColor()
     
-    var outlineSize: CGFloat  = 2.0;
+    var outlineSize: CGFloat  = 0.0 //2.0;
     
     // 1文字ずつ表示するためのラベルの配列
     var _charLabels = [UILabel]()
@@ -165,7 +165,6 @@ class FadeLabel: UILabel {
     func showCharWithFade(index: Int, char: Character, text: String, textId: Int) {
         
         var label = _charLabels[index]
-
         
         UIView.transitionWithView(label,
             duration: _charFadeSec,

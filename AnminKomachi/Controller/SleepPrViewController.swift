@@ -13,7 +13,7 @@ import UIKit
 
 class SleepPrViewController: UIViewController {
     
-    var _soundPlayer = SoundPlayer()
+    var _soundPlayer = SoundFilePlayer()
     
     // ls or pr
     var _imageType = "ls"
